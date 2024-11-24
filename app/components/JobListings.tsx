@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatDateAdded } from '../utils/helpers';
-import { Job, JobListingsProps } from '../types';
+import { Job, JobListingsProps } from '../types/index';
 
 const JobListings: React.FC<JobListingsProps> = ({ jobs, limit }) => {
   if (!jobs || jobs.length === 0) {
@@ -17,13 +17,11 @@ const JobListings: React.FC<JobListingsProps> = ({ jobs, limit }) => {
   }
 
   const displayedJobs = limit ? jobs.slice(0, limit) : jobs;
-  console.log(displayedJobs);
 
   const handleTagClick = (e: React.MouseEvent, tag: string) => {
     e.preventDefault();
     e.stopPropagation();
     // Implement tag click functionality here
-    console.log(`Tag clicked: ${tag}`);
   };
 
   return (

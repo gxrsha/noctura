@@ -13,8 +13,6 @@ const DashboardNavbar: React.FC = () => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { userData } = useUser();
 
-  console.log('userData in dashboardNavbar', userData);
-
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {

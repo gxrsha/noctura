@@ -15,7 +15,7 @@ export async function GET(req: NextRequest) {
   try {
     // Verify and decode the token
     const decodedToken = jwt.decode(token, { complete: true });
-    console.log('Decoded token:', decodedToken);
+    // console.log('Decoded token:', decodedToken);
 
     if (!decodedToken) {
       throw new Error('Invalid token');

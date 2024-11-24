@@ -61,11 +61,10 @@ const Navbar: React.FC = () => {
     setIsDropdownOpen(false);
   };
 
-  console.log('current user', user);
 
   return (
     <nav className={`bg-black shadow-md sticky top-0 z-50 transition-all duration-300 ${isSticky ? 'bg-opacity-90' : ''}`}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0 flex items-center">
@@ -86,13 +85,13 @@ const Navbar: React.FC = () => {
                   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                   className="flex items-center space-x-2 focus:outline-none"
                 >
-                 {userData?.picture && <Image
-                    src={userData?.picture}
+                 {userData?.profile_picture_url && <Image
+                    src={userData?.profile_picture_url}
                     alt="User Avatar"
                     width={30}
                     height={30}
-                      className="rounded-full"
-                    />}
+                    className="rounded-full"
+                  />}
                 </button>
                 {isDropdownOpen && (
                   <div className="absolute right-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-10">
@@ -114,7 +113,7 @@ const Navbar: React.FC = () => {
               </div>
             ) : (
               <>
-                <button
+                {/* <button
                   onClick={handleLogin}
                   className="text-white text-sm hover:text-accent transition-colors"
                 >
@@ -125,17 +124,17 @@ const Navbar: React.FC = () => {
                   className="text-sm text-background px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors"
                 >
                   Sign Up
-                </button>
+                </button> */}
               </>
             )}
-            {!user && (
+            {/* {!user && (
               <Link href="/post-job" className="bg-accent text-sm text-background px-4 py-2 rounded-full hover:bg-opacity-90 transition-colors">
                 Post Job
               </Link>
-            )}
+            )} */}
           </div>
           {/* Mobile menu button */}
-          <div className="flex items-center md:hidden">
+          {/* <div className="flex items-center md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-accent focus:outline-none focus:ring-2 focus:ring-inset focus:ring-accent"
@@ -151,7 +150,7 @@ const Navbar: React.FC = () => {
                 </svg>
               )}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
       {/* Mobile menu */}
@@ -165,13 +164,8 @@ const Navbar: React.FC = () => {
                 <Link href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-accent hover:bg-gray-700">About</Link>
                 <button onClick={handleLogout} className="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-white hover:text-accent hover:bg-gray-700">Logout</button>
               </>
-            ) : (
-              <>
-                <button onClick={handleLogin} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-accent hover:bg-gray-700">Login</button>
-                <button onClick={handleSignUp} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-accent hover:bg-gray-700">Sign Up</button>
-              </>
-            )}
-            <Link href="/post-job" className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-accent hover:bg-gray-700">Post Job</Link>
+            ) : null /* Removed the else block that contained login/signup buttons */}
+            {/* Removed Post Job link */}
           </div>
         </div>
       )}

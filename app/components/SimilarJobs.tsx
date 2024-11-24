@@ -55,13 +55,13 @@ const SimilarJobs: React.FC<SimilarJobsProps> = ({ jobId }) => {
                     className="rounded-full mr-2 md:hidden"
                   />
                   <div>
-                    <h3 className="font-semibold">{job.title}</h3>
+                    <h3 className="font-semibold font-roboto">{job.title}</h3>
                     <p className="text-sm text-gray-300">{job.company}</p>
                   </div>
                 </div>
                 <p className="text-sm mb-2">{job.location}</p>
               </div>
-              <p className="text-sm font-semibold mt-auto">{job.salary_range}</p>
+              <p className="text-sm font-semibold mt-auto">{job.salary_range === "Not specified" ? "" : job.salary_range}</p>
             </div>
           </Link>
         ))}
