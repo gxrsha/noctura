@@ -77,7 +77,7 @@ export default function Home() {
               <div className="flex justify-center sm:justify-start">
                 <Link 
                   href="/jobs" 
-                  className="bg-accent text-background px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base hover:bg-opacity-90 transition-colors inline-block w-3/4 sm:w-auto mt-16 sm:mt-0 text-center"
+                  className="bg-accent text-background px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base hover:bg-opacity-90 transition-colors inline-block w-1/2 sm:w-auto mt-16 sm:mt-0 text-center"
                 >
                   Find Jobs
                 </Link>

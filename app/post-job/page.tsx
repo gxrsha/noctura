@@ -46,7 +46,6 @@ export default function PostJobPage() {
                 <li>Detailed job description</li>
                 <li>Required skills and qualifications</li>
                 <li>Salary range (if available)</li>
-                <li>Location requirements (if any)</li>
                 <li>Benefits and perks</li>
               </ul>
             </div>

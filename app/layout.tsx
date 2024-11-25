@@ -30,11 +30,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${orbitron.variable} ${roboto.variable} h-full`}>
-      <Auth0Provider>
-        <UserProvider>
-          <ClientLayout>{children}</ClientLayout>
-        </UserProvider>
-      </Auth0Provider>
+      <body className="overflow-x-hidden">
+        <Auth0Provider>
+          <UserProvider>
+            <ClientLayout>{children}</ClientLayout>
+          </UserProvider>
+        </Auth0Provider>
+      </body>
     </html>
   );
 }
