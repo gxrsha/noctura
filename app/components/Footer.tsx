@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
           </div> */}
           <div className="w-full md:w-1/3 px-8 mb-8 md:mb-0">
             <h3 className="font-bold text-xl mb-4">Contact us</h3>
-            <p className="text-lg font-bold mb-4">info@noctura.com</p>
+            <p className="text-lg font-bold mb-4">info@noctura.io</p>
             <div className="flex space-x-4">
               <Link href="#" aria-label="Twitter" className="hover:text-accent transition-colors"><i className="fab fa-twitter"></i></Link>
               <Link href="#" aria-label="Facebook" className="hover:text-accent transition-colors"><i className="fab fa-facebook-f"></i></Link>
