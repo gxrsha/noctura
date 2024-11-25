@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'Noctura',
     images: [
       {
-        url: 'https://imgur.com/FKI9hQj',
+        url: 'https://i.imgur.com/FKI9hQj.png',
         width: 1200,
         height: 630,
         alt: 'Noctura Remote Job Board',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Noctura | Remote Job Board',
     description: 'Discover and apply to the latest remote job opportunities with Noctura. Find your next remote role in tech, marketing, design, and more.',
-    images: ['https://imgur.com/FKI9hQj'],
+    images: ['https://i.imgur.com/FKI9hQj.png'],
     creator: '@noctura',
   },
   robots: {
