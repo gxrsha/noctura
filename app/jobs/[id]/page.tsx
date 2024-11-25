@@ -3,9 +3,17 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SimilarJobs from '@/app/components/SimilarJobs';
+import { headers } from 'next/headers';
 
 async function getJobById(id: string): Promise<Job | null> {
-  const response = await fetch(`http://localhost:3000/api/jobs?id=${id}`);
+  const headersList = headers();
+  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
+  const host = headersList.get('host') || 'localhost:3000';
+  
+  const response = await fetch(`${protocol}://${host}/api/jobs?id=${id}`, {
+    cache: 'no-store'
+  });
+  
   if (!response.ok) {
     return null;
   }
