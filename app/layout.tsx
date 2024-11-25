@@ -4,6 +4,7 @@ import "./globals.css";
 import { Auth0Provider } from './components/Auth0Provider';
 import { UserProvider } from './contexts/UserContext';
 import ClientLayout from './ClientLayout';
+import GoogleAnalytics from './components/GoogleAnalytics';
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Noctura | Remote Job Board',
     description: 'Discover and apply to the latest remote job opportunities with Noctura. Find your next remote role in tech, marketing, design, and more.',
-    images: ['https://i.imgur.com/FKI9hQj.png'],
+    images: ['https://imgur.com/FKI9hQj'],
     creator: '@noctura',
   },
   robots: {
@@ -68,6 +69,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${orbitron.variable} ${roboto.variable} h-full`}>
       <body className="overflow-x-hidden">
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
         <Auth0Provider>
           <UserProvider>
             <ClientLayout>{children}</ClientLayout>
