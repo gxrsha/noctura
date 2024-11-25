@@ -3,21 +3,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SimilarJobs from '@/app/components/SimilarJobs';
-import { headers } from 'next/headers';
 
 async function getJobById(id: string): Promise<Job | null> {
-  const headersList = headers();
-  const protocol = process.env.NODE_ENV === 'development' ? 'http' : 'https';
-  const host = headersList.get('host') || 'localhost:3000';
-  
-  const response = await fetch(`${protocol}://${host}/api/jobs?id=${id}`, {
-    cache: 'no-store'
-  });
-  
-  if (!response.ok) {
+  try {
+    const response = await fetch(`https://remote-dork-ccefeca406ae.herokuapp.com/jobs/${id}`, {
+      headers: {
+        'X-API-Key': `${process.env.REMOTE_DORKS_API_KEY}`
+      },
+      cache: 'no-store'
+    });
+
+    if (!response.ok) {
+      return null;
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error('Error fetching job:', error);
     return null;
   }
-  return response.json();
 }
 
 export default async function JobPage({ params }: { params: { id: string } }) {

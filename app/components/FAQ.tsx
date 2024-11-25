@@ -46,22 +46,22 @@ const faqData: FAQItem[] = [
     {
       question: "I'm an employer. How can I post a job on your platform?",
       answer:
-        "Employers can post job openings by clicking on the 'Post a Job' button on our website. You'll be guided through the process of creating a job listing, and you can choose from different pricing options based on your needs."
+        "Employers can post job openings by clicking on the 'Post a Job' button on our website. You'll be guided through the process of creating a job listing."
     },
-    {
-      question: "What are the pricing options for job postings?",
-      answer:
-        "We offer several pricing plans for job postings, including basic listings and premium options with added visibility features. Please visit our 'Pricing' page for detailed information on each plan."
-    },
-    {
-      question: "How secure is my personal information?",
-      answer:
-        "We take your privacy seriously. All personal information is securely stored and used only for the purposes you've agreed to. Please review our Privacy Policy for more details."
-    },
+    // {
+    //   question: "What are the pricing options for job postings?",
+    //   answer:
+    //     "We offer several pricing plans for job postings, including basic listings and premium options with added visibility features. Please visit our 'Pricing' page for detailed information on each plan."
+    // },
+    // {
+    //   question: "How secure is my personal information?",
+    //   answer:
+    //     "We take your privacy seriously. All personal information is securely stored and used only for the purposes you've agreed to. Please review our Privacy Policy for more details."
+    // },
     {
       question: "How can I contact customer support?",
       answer:
-        "If you have any questions or need assistance, please reach out to our customer support team via the 'Contact Us' page or email us at support@youremail.com."
+        "If you have any questions or need assistance, please reach out to our support via email us at info@noctura.io."
     }
   ];
   
