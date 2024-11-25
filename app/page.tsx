@@ -74,10 +74,10 @@ export default function Home() {
                 At Noctura, we make it easy to find remote jobs that match your skills and ambitions. Effortlessly browse the newest opportunities and let our AI agent handle applications for you. Your next career move is just a click away.
               </p>
               <p className="text-sm sm:text-base mb-6 sm:mb-8 max-w-2xl">Simplify your hiring process with Noctura. Reach thousands of qualified remote professionals eager to join innovative teams like yours. Posting a job is quick and easy—find your next team member today.</p>
-              <div className="flex justify-center sm:justify-start">
+              <div className="flex justify-center">
                 <Link 
                   href="/jobs" 
-                  className="bg-accent text-background px-6 sm:px-8 py-2 sm:py-3 rounded-full text-sm sm:text-base hover:bg-opacity-90 transition-colors inline-block w-1/2 sm:w-auto mt-16 sm:mt-0 text-center"
+                  className="bg-accent text-background px-8 md:px-16 py-3 md:py-4 rounded-full text-sm hover:bg-opacity-90 transition-colors inline-block w-1/2 sm:w-auto mt-16 sm:mt-0 text-center"
                 >
                   Find Jobs
                 </Link>
