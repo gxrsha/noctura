@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import SimilarJobs from '@/app/components/SimilarJobs';
+import type { Metadata } from 'next';
 
 async function getJobById(id: string): Promise<Job | null> {
   try {
@@ -22,6 +23,41 @@ async function getJobById(id: string): Promise<Job | null> {
     console.error('Error fetching job:', error);
     return null;
   }
+}
+
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+  const job = await getJobById(params.id);
+  
+  if (!job) {
+    return {
+      title: "Job Not Found | Noctura",
+      description: "The job posting you were looking for could not be found."
+    };
+  }
+
+  return {
+    title: `${job.title} at ${job.company} | Noctura`,
+    description: job.detailed_description.substring(0, 155) + '...',
+    openGraph: {
+      title: `${job.title} at ${job.company}`,
+      description: job.detailed_description.substring(0, 155) + '...',
+      type: 'article',
+      url: `https://noctura.io/jobs/${params.id}`,
+      images: [
+        {
+          url: 'https://i.imgur.com/FKI9hQj.png',
+          width: 1200,
+          height: 630,
+          alt: `${job.title} at ${job.company}`,
+        }
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${job.title} at ${job.company}`,
+      description: job.detailed_description.substring(0, 155) + '...',
+    }
+  };
 }
 
 export default async function JobPage({ params }: { params: { id: string } }) {
