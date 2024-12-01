@@ -116,10 +116,10 @@ export default async function JobPage({ params }: { params: { id: string } }) {
         
         {job.benefits && job.benefits.length > 0 && (
           <div className="mb-4">
-            <h2 className="text-xl font-bold font-semibold mb-2">Benefits</h2>
-            <ul className="list-disc list-inside">
+            <h2 className="text-xl font-roboto font-semibold mb-2">Benefits</h2>
+            <ul className="list-disc text-sm list-inside">
               {job.benefits.map((benefit: string, index: number) => (
-                <li key={index}>{benefit}</li>
+                <li key={index} className="text-sm">{benefit}</li>
               ))}
             </ul>
           </div>
