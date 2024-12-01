@@ -113,14 +113,18 @@ export default async function JobPage({ params }: { params: { id: string } }) {
             ))}
           </ul>
         </div>
-        <div className="mb-4">
-          <h2 className="text-xl font-bold font-semibold mb-2">Benefits</h2>
-          <ul className="list-disc list-inside">
-            {job.benefits.map((benefit: string, index: number) => (
-              <li key={index}>{benefit}</li>
-            ))}
-          </ul>
-        </div>
+        
+        {job.benefits && job.benefits.length > 0 && (
+          <div className="mb-4">
+            <h2 className="text-xl font-bold font-semibold mb-2">Benefits</h2>
+            <ul className="list-disc list-inside">
+              {job.benefits.map((benefit: string, index: number) => (
+                <li key={index}>{benefit}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+
         <div className="flex flex-wrap gap-2 mt-8">
           {job.tags.map((tag: string, index: number) => (
             <span key={index} className="bg-background text-primary text-xs p-2 rounded-full">
